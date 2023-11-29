@@ -30,3 +30,8 @@ let movies = [
     { Name = "Nightmare Alley"; RunLength = 150; Genre = Thriller ; Director = { Name = "Guillermo Del Toro"; Movies = 22 }; IMDBRating = 7.1 }
 ]
 
+// Identify probable Oscar winners
+let oscarWinners = movies |> List.filter (fun movie -> movie.IMDBRating > 7.4)
+
+printfn "Probable Oscar Winners: %A" oscarWinners
+
