@@ -35,3 +35,14 @@ let oscarWinners = movies |> List.filter (fun movie -> movie.IMDBRating > 7.4)
 
 printfn "Probable Oscar Winners: %A" oscarWinners
 
+// Convert movie run length to hours and minutes format
+let convertRunLength (minutes: int) =
+    let hours = minutes / 60
+    let remainingMinutes = minutes % 60
+    sprintf "%dh %02dmin" hours remainingMinutes
+
+// Map function to convert run lengths to hours and minutes format
+let runLengthsInHours = movies |> List.map (fun movie -> convertRunLength movie.RunLength)
+
+// Print results
+printfn "Movie Run Lengths in Hours: %A" runLengthsInHours
